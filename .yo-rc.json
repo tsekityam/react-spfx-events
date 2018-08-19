@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.5.1",
+    "libraryName": "react-events",
+    "libraryId": "d461d861-b809-4100-9ddd-81b53dea7b72",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
