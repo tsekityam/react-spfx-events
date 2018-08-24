@@ -81,18 +81,24 @@ export default class RecurringEventsParser {
     let options: any = {
       mergeAttrs: true,
       explicitArray: false,
+      attrValueProcessors: [
+        xml2js.processors.parseNumbers,
+        xml2js.processors.parseBooleans
+      ],
       valueProcessors: [
         xml2js.processors.parseNumbers,
         xml2js.processors.parseBooleans
       ]
     };
 
-    xml2js.parseString(event.RecurrenceData, options, function(
-      err: any,
-      result: any
-    ) {
-      console.dir(result);
-    });
+    xml2js.parseString(
+      event.RecurrenceData,
+      options,
+      (err: any, result: any): void => {
+        console.dir(err);
+        console.dir(result);
+      }
+    );
 
     // let recurrenceData: IRecurrenceData = xml2js.stringToJs(
     //   event.RecurrenceData
